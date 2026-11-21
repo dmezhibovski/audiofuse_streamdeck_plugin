@@ -3,23 +3,43 @@
 	"Version": "0.1.0.0",
 	"Author": "Daniel Mezhibovski",
 	"Actions": [
-		{
-			"Name": "Counter",
-			"UUID": "com.daniel-mezhibovski.audiofuse-controller.increment",
-			"Icon": "imgs/actions/counter/icon",
-			"Tooltip": "Displays a count, which increments by one on press.",
-			"PropertyInspectorPath": "ui/increment-counter.html",
-			"Controllers": [
-				"Keypad"
-			],
-			"States": [
-				{
-					"Image": "imgs/actions/counter/key",
-					"TitleAlignment": "middle"
-				}
-			]
-		}
-	],
+    	{
+      "Name": "Toggle Mute",
+      "UUID": "com.daniel-mezhibovski.audiofuse-controller.mute",
+      "Icon": "imgs/actions/mute/icon",
+      "Tooltip": "Mute or unmute main monitor output",
+      "States": [
+        {
+          "Image": "imgs/actions/mute/off",
+          "Title": "LIVE",
+          "ShowTitle": true
+        },
+        {
+          "Image": "imgs/actions/mute/on",
+          "Title": "MUTED",
+          "ShowTitle": true
+        }
+      ]
+    },
+    {
+      "Name": "Phantom 48V (Input 2)",
+      "UUID": "com.daniel-mezhibovski.audiofuse-controller.phantom1",
+      "Icon": "imgs/actions/phantom/icon",
+      "Tooltip": "Toggle 48V phantom power on Input 2",
+      "States": [
+        {
+          "Image": "imgs/actions/phantom/off",
+          "Title": "48V OFF",
+          "ShowTitle": true
+        },
+        {
+          "Image": "imgs/actions/phantom/on",
+          "Title": "48V ON",
+          "ShowTitle": true
+        }
+      ]
+    }
+  	],
 	"Category": "audiofuse-controller",
 	"CategoryIcon": "imgs/plugin/category-icon",
 	"CodePath": "bin/plugin.js",
