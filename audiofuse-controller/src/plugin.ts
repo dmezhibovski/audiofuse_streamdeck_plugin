@@ -4,6 +4,8 @@ import streamDeck, {
   SingletonAction,
   WillAppearEvent,
 } from "@elgato/streamdeck";
+import { spawn } from "node:child_process";
+import { existsSync } from "node:fs";
 import { AnalogInputState, audioFuse, MonitoringState } from "./audiofuse-client.js";
 
 streamDeck.logger.setLevel("debug");
@@ -113,7 +115,42 @@ export class TogglePhantom2Action extends SingletonAction {
   }
 }
 
+const WIN_AFCC_PATHS = [
+  "C:\\Program Files (x86)\\Arturia\\AudioFuse Control Center\\AudioFuse Control Center.exe",
+  "C:\\Program Files\\Arturia\\AudioFuse Control Center\\AudioFuse Control Center.exe",
+];
+
+@action({ UUID: "com.daniel-mezhibovski.audiofuse-controller.open-acc" })
+export class OpenACCAction extends SingletonAction {
+  override async onKeyDown(ev: KeyDownEvent): Promise<void> {
+    try {
+      if (process.platform === "win32") {
+        const exePath = WIN_AFCC_PATHS.find((p) => existsSync(p));
+        if (!exePath) {
+          throw new Error("AudioFuse Control Center executable not found");
+        }
+        logger.info(`Launching AudioFuse Control Center: ${exePath}`);
+        const child = spawn(exePath, [], { detached: true, stdio: "ignore" });
+        child.unref();
+      } else if (process.platform === "darwin") {
+        logger.info("Launching AudioFuse Control Center (macOS)");
+        const child = spawn("open", ["-a", "AudioFuse Control Center"], {
+          detached: true,
+          stdio: "ignore",
+        });
+        child.unref();
+      } else {
+        throw new Error(`Unsupported platform: ${process.platform}`);
+      }
+    } catch (err) {
+      logger.error("OpenACC onKeyDown failed", err);
+      await ev.action.showAlert();
+    }
+  }
+}
+
+
 streamDeck.actions.registerAction(new ToggleMuteAction());
 streamDeck.actions.registerAction(new TogglePhantom2Action());
-streamDeck.actions.registerAction(new TogglePhantom2Action());
+streamDeck.actions.registerAction(new OpenACCAction());
 streamDeck.connect();

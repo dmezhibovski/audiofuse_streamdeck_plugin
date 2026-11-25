@@ -50,8 +50,14 @@
     {
       "Name": "Open ACC",
       "UUID": "com.daniel-mezhibovski.audiofuse-controller.open-acc",
-      "Tooltip": "Open Arturia Audiofuse Control Center app"
-
+      "Icon": "imgs/actions/open-acc/icon",
+      "Tooltip": "Open Arturia AudioFuse Control Center app",
+      "States": [
+        {
+          "Image": "imgs/actions/open-acc/key",
+          "ShowTitle": false
+        }
+      ]
     }
   	],
 	"Category": "audiofuse-controller",
