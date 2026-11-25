@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144">
+  <defs>
+    <radialGradient id="bg-48v-off" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#222630" />
+      <stop offset="100%" stop-color="#12141A" />
+    </radialGradient>
+  </defs>
+  <rect width="144" height="144" fill="url(#bg-48v-off)" />
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Mic capsule -->
+    <rect x="57" y="24" width="30" height="46" rx="15" fill="#6B7280" stroke="#9CA3AF" stroke-width="3.5" />
+    <!-- Mic cradle -->
+    <path d="M46 56 A26 26 0 0 0 98 56" stroke="#9CA3AF" stroke-width="5" />
+    <!-- Mic stand -->
+    <line x1="72" y1="82" x2="72" y2="96" stroke="#9CA3AF" stroke-width="5" />
+    <line x1="56" y1="96" x2="88" y2="96" stroke="#9CA3AF" stroke-width="5" />
+    <!-- Diagonal strike line -->
+    <line x1="36" y1="88" x2="108" y2="26" stroke="#12141A" stroke-width="13" />
+    <line x1="36" y1="88" x2="108" y2="26" stroke="#EF4444" stroke-width="7" />
+  </g>
+</svg>

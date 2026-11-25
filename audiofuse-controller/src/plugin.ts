@@ -60,7 +60,7 @@ export class ToggleMuteAction extends SingletonAction {
 }
 
 @action({ UUID: "com.daniel-mezhibovski.audiofuse-controller.phantom1" })
-export class TogglePhantom1Action extends SingletonAction {
+export class TogglePhantom2Action extends SingletonAction {
   private unsubscribe: (() => void) | null = null;
   private unsubscribeConnect: (() => void) | null = null;
 
@@ -114,5 +114,6 @@ export class TogglePhantom1Action extends SingletonAction {
 }
 
 streamDeck.actions.registerAction(new ToggleMuteAction());
-streamDeck.actions.registerAction(new TogglePhantom1Action());
+streamDeck.actions.registerAction(new TogglePhantom2Action());
+streamDeck.actions.registerAction(new TogglePhantom2Action());
 streamDeck.connect();

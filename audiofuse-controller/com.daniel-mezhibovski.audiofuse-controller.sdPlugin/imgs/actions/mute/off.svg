@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="144" height="144">
+  <defs>
+    <radialGradient id="bg-unmuted" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1E2B26" />
+      <stop offset="100%" stop-color="#12161B" />
+    </radialGradient>
+  </defs>
+  <rect width="144" height="144" fill="url(#bg-unmuted)" />
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Speaker body -->
+    <path d="M36 48 H50 L68 32 V84 L50 68 H36 A4 4 0 0 1 32 64 V52 A4 4 0 0 1 36 48 Z"
+          fill="#E8F5EE" stroke="#E8F5EE" stroke-width="3" />
+    <!-- Sound waves -->
+    <path d="M80 46 A18 18 0 0 1 80 70" stroke="#34D399" stroke-width="5.5" />
+    <path d="M92 36 A32 32 0 0 1 92 80" stroke="#34D399" stroke-width="5.5" />
+  </g>
+</svg>

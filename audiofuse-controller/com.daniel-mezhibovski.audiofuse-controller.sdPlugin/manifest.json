@@ -11,13 +11,17 @@
       "States": [
         {
           "Image": "imgs/actions/mute/off",
-          "Title": "LIVE",
-          "ShowTitle": true
+          "Title": "UNMUTED",
+          "ShowTitle": true,
+          "TitleAlignment": "bottom",
+          "FontSize": 10
         },
         {
           "Image": "imgs/actions/mute/on",
           "Title": "MUTED",
-          "ShowTitle": true
+          "ShowTitle": true,
+          "TitleAlignment": "bottom",
+          "FontSize": 11
         }
       ]
     },
@@ -30,14 +34,24 @@
         {
           "Image": "imgs/actions/phantom/off",
           "Title": "48V OFF",
-          "ShowTitle": true
+          "ShowTitle": true,
+          "TitleAlignment": "bottom",
+          "FontSize": 11
         },
         {
           "Image": "imgs/actions/phantom/on",
           "Title": "48V ON",
-          "ShowTitle": true
+          "ShowTitle": true,
+          "TitleAlignment": "bottom",
+          "FontSize": 11
         }
       ]
+    },
+    {
+      "Name": "Open ACC",
+      "UUID": "com.daniel-mezhibovski.audiofuse-controller.open-acc",
+      "Tooltip": "Open Arturia Audiofuse Control Center app"
+
     }
   	],
 	"Category": "audiofuse-controller",
